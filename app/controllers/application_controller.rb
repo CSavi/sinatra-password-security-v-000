@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
 			redirect '/login'
 		else
 			redirect '/failure'
-		end 		
+		end
 	end
 
 	get "/login" do
@@ -36,9 +36,9 @@ class ApplicationController < Sinatra::Base
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id 
 			redirect '/success'
-		else 
+		else
 			redirect '/failure'
-		end 		
+		end
 	end
 
 	get "/success" do
